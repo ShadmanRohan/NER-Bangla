@@ -1,4 +1,3 @@
-
 import torch
 import torch.nn as nn
 import json
@@ -93,6 +92,5 @@ for epoch in range(1, n_epochs+1):
     train(model, train_iter, optimizer, criterion, epoch)
     _ = eval(model, test_iter, epoch)
 
-    save_path = '/content/banner/checkpoints'
-    fname = os.path.join(save_path, str(epoch))
+    fname = os.path.join("/content/banner/models", str(epoch))
     torch.save(model.state_dict(), f"{fname}.pt")
